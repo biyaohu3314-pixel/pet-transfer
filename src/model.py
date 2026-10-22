@@ -16,3 +16,16 @@ if __name__ == "__main__":
     # 4.把 x 送进模型，打印输出的shape
     out = model(x)
     print("输出:",out.shape)
+
+    # 一层一层手动往前走，每步打印shape
+    h = x
+    for name in ["conv1", "bn1","relu","maxpool","layer1","layer2","layer3","layer4","avgpool"]:
+        layer = getattr(model,name) # 按名字取出这一层，相当于m.conv1,m.layer1...
+        h = layer(h)
+        print(f"{name:8s} -> {tuple(h.shape)}")
+
+    h = torch.flatten(h,1)
+    print("flatten ->",tuple(h.shape))
+
+    h = model.fc(h)
+    print("fc       ->", tuple(h.shape))
