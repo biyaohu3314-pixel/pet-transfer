@@ -1,2 +1,31 @@
-# pet-transfer
-ResNet18 transfer learning on Oxford-IIIT Pet: scratch vs linear probe vs finetune
+# pet-transfer：预训练到底帮了多少？
+
+## 1. 实验问题
+（用一句话写：我们在比较什么、想回答什么问题）
+
+## 2. 环境
+（写你今天实际跑通的版本：Python、torch、CUDA）
+
+## 3. 统一约定
+| 项目 | 值 |
+|---|---|
+| 随机种子 | |
+| 图片尺寸 | |
+| batch size | |
+| epoch | |
+| 实验命名 | |
+
+## 4. 分工与实验认领
+| 成员 | 岗位 | 负责的 3 组实验 | 学习率 |
+|---|---|---|---|
+
+## 5. 运行方式
+python src/train.py --mode ? --ratio ?
+
+## 6. 协作规则
+（写我们刚才说的两条，再加一条：哪些文件走 Git、哪些不走）
+
+## 7. 实验记录
+| 实验名 | 跑的人 | test acc | 备注 |
+|---|---|---|---|
+|     |     |          |    |

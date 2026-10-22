@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ===== 本项目 =====
+data/
+outputs/**/*.pth
+.idea/
