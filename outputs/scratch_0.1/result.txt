@@ -1,0 +1,12 @@
+mode=scratch
+ratio=0.1
+test_acc=0.0823
+best_val_acc=0.0883
+best_epoch=14
+epochs=15
+lr=0.001
+batch_size=32
+seed=42
+trainable_params=11195493
+train_time_min=1.0
+device=NVIDIA GeForce RTX 5070 Laptop GPU
