@@ -27,10 +27,10 @@
 
 ## 4. 分工
 | 成员 | 负责的 3 组实验 | 学习率 |
-|---|-|---|
-| 姜 |download.py、dataset.py、splits/||
-| 胡 |画图、PPT ||
-| 胡 |model.py、train.py，跑全部 9 组实验||
+|----|-|---|
+| A  |download.py、dataset.py、splits/||
+| B  |画图、PPT ||
+| C  |model.py、train.py，跑全部 9 组实验||
 
 ## 5. 运行方式
 python src/train.py --mode ? --ratio ?
