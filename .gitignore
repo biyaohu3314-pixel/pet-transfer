@@ -1,0 +1,6 @@
+data/
+figures/
+outputs/
+*.zip
+*.pth
+__pycache__/
