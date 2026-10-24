@@ -5,7 +5,6 @@ __pycache__/
 
 # Datasets and Outputs
 data/
-outputs/
-figures/
+outputs/_smoke/
 *.zip
 *.pth
