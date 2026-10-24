@@ -1,31 +1,29 @@
-import torch
+import torch.nn as nn
 from torchvision import models
-from torchvision.models import ResNet
+
+def build_model(num_classes=37, model="finetune"):
+    """
+    model 决定迁移学习方式
+    “scratch”  : 不加载预训练权重，从头训练
+    "freeze"   : 加载预训练权重，冻结backbone,只训练fc
+    "finetune" : 加载预训练权重，全部参数都训练
+    """
+    ## TODO 1.根据 model 决定 weights 传 None 还是 DEFAULT
+    if model == "scratch":
+        m = models.resnet18(weights = None)
+    else:
+        m = models.resnet18(weights = models.ResNet18_Weights.DEFAULT)
+
+    ## TODO 2.如果是 freeze 把所有参数的 requires_grad 设为 False
+    if model == "freeze":
+        model.parameters(requires_grad = False)
+
+    ## TODO 3: 替换 model.fc —— 输入维度用 model.fc.in_features，不要手写 512
+    model.fc = nn.Linear(model.fc.in_features, num_classes)
+    return model
 
 if __name__ == "__main__":
-    # 1.加载预训练的 resnet18
-    model = models.resnet18(weights = models.ResNet18_Weights.DEFAULT)
-
-    # 2.打印整个模型
-    print(model)
-
-    # 3.选一批假照片：2 张、3 通道、224 x 224
-    x = torch.randn(2, 3, 224, 224)
-    print("输入:",x.shape)
-
-    # 4.把 x 送进模型，打印输出的shape
-    out = model(x)
-    print("输出:",out.shape)
-
-    # 一层一层手动往前走，每步打印shape
-    h = x
-    for name in ["conv1", "bn1","relu","maxpool","layer1","layer2","layer3","layer4","avgpool"]:
-        layer = getattr(model,name) # 按名字取出这一层，相当于m.conv1,m.layer1...
-        h = layer(h)
-        print(f"{name:8s} -> {tuple(h.shape)}")
-
-    h = torch.flatten(h,1)
-    print("flatten ->",tuple(h.shape))
-
-    h = model.fc(h)
-    print("fc       ->", tuple(h.shape))
+    # TODO 4: 对 3 种 mode 分别 build 一次，
+    #         打印 输出 shape 和 可训练参数数量
+    #         提示: sum(p.numel() for p in model.parameters() if p.requires_grad)
+    pass
