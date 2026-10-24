@@ -1,6 +1,11 @@
+# PyCharm
+.idea/
+__pycache__/
+*.py[cod]
+
+# Datasets and Outputs
 data/
-figures/
 outputs/
+figures/
 *.zip
 *.pth
-__pycache__/
