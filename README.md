@@ -26,11 +26,11 @@
 | 学习率    |       scratch / linear：1e-3；finetune：1e-4     |
 
 ## 4. 分工
-| 成员  | 负责的 3 组实验 | 学习率 |
-|-----|-|---|
-| 姜晨萱 |download.py、dataset.py、splits/||
-| 胡怡琳 |画图、PPT ||
-| 胡碧瑶 |model.py、train.py，跑全部 9 组实验||
+| 成员 | 负责的 3 组实验 | 学习率 |
+|----|-|---|
+| A  |download.py、dataset.py、splits/||
+| B  |画图、PPT ||
+| C  |model.py、train.py，跑全部 9 组实验||
 
 ## 5. 运行方式
 python src/train.py --mode ? --ratio ?
