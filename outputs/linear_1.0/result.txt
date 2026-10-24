@@ -1,0 +1,12 @@
+mode=linear
+ratio=1.0
+test_acc=0.8746
+best_val_acc=0.9117
+best_epoch=6
+epochs=15
+lr=0.001
+batch_size=32
+seed=42
+trainable_params=18981
+train_time_min=3.3
+device=NVIDIA GeForce RTX 5060 Laptop GPU
