@@ -1,0 +1,12 @@
+mode=dino_linear
+ratio=0.1
+test_acc=0.8932
+best_val_acc=0.8886
+best_epoch=15
+epochs=15
+lr=0.001
+batch_size=32
+seed=42
+trainable_params=14245
+train_time_min=1.6
+device=NVIDIA GeForce RTX 5070 Laptop GPU

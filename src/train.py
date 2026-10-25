@@ -36,18 +36,18 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from model import build_model  # noqa: E402
 
-
+# 固定随机种子
 def set_seed(seed=42):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-
+# 读命令行参数 按mode自动选择学习率
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--mode", type=str, default="finetune",
-                   choices=["scratch", "linear", "finetune"])
+                   choices=["dino_linear","scratch", "linear", "finetune"])
     p.add_argument("--ratio", type=float, default=0.1, choices=[0.1, 0.5, 1.0])
     p.add_argument("--epochs", type=int, default=15)
     p.add_argument("--lr", type=float, default=None)          # 不传就按 mode 自动选
@@ -57,7 +57,7 @@ def parse_args():
                    help="用随机假数据快速检查流程能否跑通")
     return p.parse_args()
 
-
+# 拿到train /val /test 三个DataLoader
 def get_data(args):
     """返回 train_loader, val_loader, test_loader"""
     if args.smoke:

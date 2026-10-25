@@ -8,3 +8,5 @@ data/
 outputs/_smoke/
 *.zip
 *.pth
+
+weights/
